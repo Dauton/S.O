@@ -400,3 +400,6 @@ body {
 .fontes-opcoes nav {
     border: none;
 }
+.fontes-opcoes i {
+    color: #f2f2f2 !important;
+}
