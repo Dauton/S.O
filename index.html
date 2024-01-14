@@ -108,10 +108,6 @@
                         <p>Spotify</p>
                     </div>
                     <div class="app">
-                        <img src="img/tools_settings_options_configuration_setting_icon_228395.png">
-                        <p>Configurações</p>
-                    </div>
-                    <div class="app">
                         <img src="img/java_icon_130901.png">
                         <p>Java</p>
                     </div>
@@ -126,6 +122,10 @@
                     <div class="app">
                         <img src="img/uber_icon_130805.png">
                         <p>Uber</p>
+                    </div>
+                    <div class="app" id="app-configuracao">
+                        <img src="img/tools_settings_options_configuration_setting_icon_228395.png">
+                        <p>Configurações</p>
                     </div>
 
                     <div class="barra-drop-down">
@@ -148,8 +148,8 @@
                                 <p>GPS</p>
                             </div>
                             <div class="icon">
-                                <i class="fa-regular fa-paper-plane"></i>
-                                <p>Modo avião</p>
+                                <i class="fa-solid fa-circle-half-stroke"></i>
+                                <p>Modo escuro</p>
                             </div>
 
                             <div class="atalhos">
@@ -160,6 +160,23 @@
 
                         <div class="range-brilho">
                             <input type="range">
+                        </div>
+
+                        <div class="notificacao">
+                            <img src="img/linkedin_icon_130888.png">
+                            <div class="notificacao-info">
+                                <h3>Linkedin</h3>
+                                <p>Seu perfil foi exibido em 12 resultados de pesquisa nessa semana.</p>
+                                <p class="notificacao-info-time">13:24</p>
+                            </div>
+                        </div>
+                        <div class="notificacao">
+                            <img src="img/whatsapp_icon_130788.png">
+                            <div class="notificacao-info">
+                                <h3>WhatsApp</h3>
+                                <p>Procurando novas mensagens.</p>
+                                <p class="notificacao-info-time">15:47</p>
+                            </div>
                         </div>
                     </div>
 
@@ -177,11 +194,55 @@
                         <i class="fa-regular fa-circle"></i>
                         <i class="fa-regular fa-square"></i>
                     </div>
+
+
+                    <article class="tela-configuracao">
+                        <h3>Configurações</h3>
+                        <nav>
+                            <ul>
+                                <li id="app-configuracao-wallpaper"><i class="fa-solid fa-panorama"></i> Wallpaper <i class="fa-solid fa-chevron-right"></i></li>
+                                <li id="app-configuracao-fontes"><i class="fa-solid fa-font"></i></i> Fontes <i class="fa-solid fa-chevron-right"></i></li>
+                            </ul>
+                        </nav>
+                    </article>
+                    <div id="wallpapers">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <h3>Wallpapers</h3>
+                        <p>Escolha</p>
+                        <div class="wallpapers-opcoes">
+                            <img src="img/wallpaper1.jpg" id="wallpaper1">
+                            <img src="img/wallpaper2.jpg" id="wallpaper2">
+                            <img src="img/wallpaper3.jpg" id="wallpaper3">
+                            <img src="img/wallpaper4.jpg" id="wallpaper4">
+                        </div>
+                        <div class="wallpapers-aplicado">
+                            <p>Wallpaper aplicado na tela inicial!</p>
+                        </div>
+                    </div>
+                </article>
+                <div id="fontes">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    <h3>Fontes</h3>
+                    <p>Escolha</p>
+                    <div class="fontes-opcoes">
+                        <nav>
+                            <ul>
+                                <li id="fonte1"><i class="fa-solid fa-font"></i>Arial</i></li>
+                                <li id="fonte2"><i class="fa-solid fa-font"></i>Calibri</li>
+                                <li id="fonte3"><i class="fa-solid fa-font"></i>Open Sans</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="fontes-aplicado">
+                        <p>Fonte alterada no sistema!</p>
+                    </div>
+                </div>
+
                 </article>
                 <div class="celular-camera-frontal"></div>
             </div>
 
-            <i class="fa-regular fa-hand-point-left" id="ligar-desligar-tela"></i>
+            <i class="fa-solid fa-hand-point-left" id="ligar-desligar-tela"></i>
             <button type="button" id="celular-btn-tela"></button>
 
         </section>
@@ -204,11 +265,9 @@
         var mao = false;
         $("#ligar-desligar-tela, #celular-btn-tela").click(function () {
             if (!mao) {
-                $("#ligar-desligar-tela").css({ "color": "#800000" });
                 $(".tela-inicial").css({ "display": "flex" });
                 mao = true;
             } else {
-                $("#ligar-desligar-tela").removeAttr('style');
                 $(".tela-inicial").fadeOut(100);
                 mao = false;
             }
@@ -226,12 +285,15 @@
                 drop = false
             }
         });
-        $(".fa-angle-left").click(function () {
+        $(".fa-angle-left, .fa-circle").click(function () {
             $(".barra-drop-down").slideUp(200)
         });
 
 
+
         /* Funções da barra superior dropdown */
+
+            /* Função Wi-fi */
         var wifi = false;
         $(".icon:nth-child(1) i").click(function () {
             if (!wifi) {
@@ -248,6 +310,8 @@
                 wifi = false;
             }
         });
+
+            /* Função Bluetooth */
         var bluetooth = false;
         $(".icon:nth-child(2) i").click(function () {
             if (!bluetooth) {
@@ -265,6 +329,123 @@
             }
         });
 
+            /* Função Modo escuro */
+        var tema = false;
+        $(".icon:nth-child(5) i").click(function() {
+            if(!tema) {
+                $(this).css({
+                    "background": "#353535",
+                    "transform": "rotate(180deg)",
+                    "transition": ".2s ease"
+                })
+                $(":root").css({
+                    "--dark-theme-background": "#f2f2f2",
+                    "--dark-theme-color-primary": "#353535",
+                });
+                tema = true
+            } else {
+                $(this).removeAttr('style').css({ "transform": "rotate(360deg)", "transition": ".2s ease" });
+                $(":root").removeAttr('style');
+                tema = false
+            }
+        });
+
+        /* Tela de configuração */
+
+
+        $("#app-configuracao, .atalhos .fa-gear").click(function() {
+            $(".tela-configuracao").show(200);
+        });
+        $(".fa-gear").click(function() {
+            $(".barra-drop-down").slideUp(200)
+        });
+
+
+        /* Wallpapers */
+
+        $("#app-configuracao-wallpaper").click(function() {
+            $("#wallpapers").fadeToggle(100);
+        });
+
+            /* Wallpaper 1 */
+        $("#wallpaper1").click(function() {
+            $(".tela-inicial").css({
+                "background": "url(img/wallpaper1.jpg) no-repeat",
+                "background-size": "cover"
+            })
+        });
+            /* Wallpaper 2 */
+        $("#wallpaper2").click(function() {
+            $(".tela-inicial").css({
+                "background": "url(img/wallpaper2.jpg) no-repeat",
+                "background-size": "cover"
+            })
+        });
+            /* Wallpaper 3 */
+        $("#wallpaper3").click(function() {
+            $(".tela-inicial").css({
+                "background": "url(img/wallpaper3.jpg) no-repeat",
+                "background-size": "cover"
+            })
+        });
+            /* Wallpaper 4 */
+        $("#wallpaper4").click(function() {
+            $(".tela-inicial").css({
+                "background": "url(img/wallpaper4.jpg) no-repeat",
+                "background-size": "cover"
+            })
+        });
+
+        $("#wallpapers img").click(function() {
+            $(".wallpapers-aplicado").fadeIn(200);
+            setTimeout(function(){
+                $(".wallpapers-aplicado").fadeOut(200)
+            },3000)
+        });
+
+        $("#wallpapers .fa-arrow-left-long").click(function() {
+            $("#wallpapers").fadeOut(200);
+        });
+        $(".fa-circle").click(function() {
+            $(".tela-configuracao, #wallpapers, #fontes").fadeOut(200)
+        });
+
+        /* Fontes */
+
+        $("#fontes .fa-arrow-left-long").click(function() {
+            $("#fontes").fadeOut(200);
+        });
+
+        $("#app-configuracao-fontes").click(function() {
+            $("#fontes").fadeToggle(100);
+        });
+            /* Fonte 1 */
+        $("#fonte1").click(function() {
+            $("body").css({
+                "font-family": "Arial, Helvetica, sans-serif",
+            })
+        });
+            /* Fonte 2 */
+        $("#fonte2").click(function() {
+            $("body").css({
+                "font-family": "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+            })
+        });
+            /* Fonte 3 */
+        $("#fonte3").click(function() {
+            $("body").css({
+                "font-family": "'Nunito', sans-serif",
+                "font-family": "'Open Sans', sans-serif",
+            })
+        });
+
+        $("#fontes ul li").click(function() {
+            $(".fontes-aplicado").fadeIn(200);
+            setTimeout(function(){
+                $(".fontes-aplicado").fadeOut(200)
+            },3000)
+        });
+        
     </script>
 
 </body>

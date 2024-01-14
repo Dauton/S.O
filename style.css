@@ -1,3 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --dark-theme-background: #16161d;
+    --dark-theme-color-primary: #f2f2f2;
+    --dark-theme-color-secundary: #939393;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -5,8 +14,10 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
 .principal {
     width: 100%;
     height: 100%;
@@ -30,6 +41,7 @@ body {
     justify-content: center;
     position: relative;
 }
+
 .celular-tela {
     width: 100%;
     height: 100%;
@@ -39,7 +51,9 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 3;
 }
+
 .celular-camera-frontal {
     width: 15px;
     height: 15px;
@@ -48,7 +62,8 @@ body {
     background: #4e4e4e;
     box-shadow: inset 0 0 .4em #000000;
     position: absolute;
-    top: 10px;
+    top: 7px;
+    z-index: 3
 }
 
 #celular-btn-tela {
@@ -62,12 +77,12 @@ body {
     top: 100px;
     cursor: pointer;
 }
+
 #ligar-desligar-tela {
     position: absolute;
     top: 110px;
     right: -70px;
     font-size: 60px;
-    color: #008000;
     cursor: pointer;
 }
 
@@ -82,10 +97,11 @@ body {
     justify-content: center;
     position: absolute;
     border-radius: 20px;
-    background: url(img/wallpaper.jpg) no-repeat;
+    background: url(img/wallpaper1.jpg) no-repeat;
     background-size: cover;
     display: none;
 }
+
 .app {
     width: 43px;
     display: flex;
@@ -98,15 +114,18 @@ body {
     cursor: pointer;
     transition: .2s all
 }
+
 .app img {
     width: 100%;
     margin-bottom: 5px;
     filter: drop-shadow(0 0 .2em black);
 }
+
 .app:hover {
     transform: scale(1.1);
     transition: .2s all;
 }
+
 .widget-busca {
     padding: 7px 10px;
     margin: 20px 10px;
@@ -118,6 +137,7 @@ body {
     filter: drop-shadow(0 0 .2em black);
     color: #555555;
 }
+
 .widget-busca input {
     width: 100%;
     border: none;
@@ -126,13 +146,16 @@ body {
     padding: 2px 7px;
     margin: 0 5px;
 }
+
 .widget-busca input:focus {
     outline: none;
 }
-.barra-superior, .barra-inferior {
+
+.barra-superior,
+.barra-inferior {
     width: 100%;
     height: 40px;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 18px 18px;
     background: #222227;
     display: flex;
     align-items: center;
@@ -141,55 +164,65 @@ body {
     bottom: 0;
     left: 0;
     color: #f2f2f2;
+    z-index: 2;
 }
+
 .barra-inferior i {
     cursor: pointer;
 }
+
 .barra-superior {
-    height: 35px;
+    height: 30px;
     padding: 0 20px;
     top: 0;
-    border-radius: 20px 20px 0 0;
-    background: transparent;
+    border-radius: 18px 18px 0 0;
+    background: #16161d;
     justify-content: space-between;
     font-size: 13px;
     cursor: pointer;
 }
+
 .barra-superior i {
     margin: 1px;
 }
+
 .barra-drop-down {
     width: 100%;
     height: 100%;
-    padding: 40px 10px 10px 10px;
+    padding: 35px 5px 5px 5px;
     top: 0;
     position: absolute;
     background: #000000cc;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    z-index: 2;
     display: none;
 }
 
-.icons, .range-brilho {
+.icons,
+.range-brilho,
+.notificacao {
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
-    background: #161616;
+    background: var(--dark-theme-background);
     border-radius: 10px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    color: var(--dark-theme-color-primary);
 }
+
 .icon {
     margin: 10px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #f2f2f2;
     cursor: pointer;
 }
+
 .icon i {
     width: 40px;
     height: 40px;
@@ -199,25 +232,171 @@ body {
     justify-content: center;
     border-radius: 50%;
     background: #353535;
+    color: #f2f2f2;
     font-size: 19px;
 }
-.icon:nth-child(1) i, .icon:nth-child(2) i {
+
+.icon:nth-child(1) i,
+.icon:nth-child(2) i,
+.icon:nth-child(5) i {
     background: #007b73;
 }
+
 .icon p {
     font-size: 8px;
 }
+
 .atalhos {
     width: 100%;
     padding: 10px 5px 0 5px;
-    color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: right;
     border-top: .1px solid #4e4e4e;
     font-size: 13px;
 }
+.atalhos i {
+    cursor: pointer;
+}
 
 .range-brilho input {
     width: 100%;
+}
+.notificacao {
+    align-items:normal;
+    flex-wrap:unset;
+    justify-content:left;
+    font-size: 12px;
+    position: relative;
+} 
+.notificacao img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.notificacao p {
+    color: var(--dark-theme-color-secundary);
+}
+.notificacao h3 {
+    font-size: 12px;
+}
+.notificacao-info-time {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 8px;
+}
+
+
+.tela-configuracao, #wallpapers, #fontes {
+    width: 100%;
+    height: 100%;
+    padding: 40px 10px 10px 10px;
+    background: var(--dark-theme-background);
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    color: var(--dark-theme-color-primary);
+    display: none
+}
+.tela-configuracao nav, .fontes-opcoes nav {
+    border-top: 1px solid #4e4e4e;
+    margin-top: 10px;
+}
+.tela-configuracao ul li, .fontes-opcoes ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: var(--dark-theme-color-primary);
+    position: relative;
+}
+.tela-configuracao ul li i, .fontes-opcoes ul li i {
+    width: 30px;
+    height: 30px;
+    background: #007b73;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 13px;
+    color: #f2f2f2;
+}
+#app-configuracao-fontes i {
+    background: darkorange;
+}
+.fa-chevron-right {
+    background: transparent !important;
+    position: absolute;
+    right: -20px;
+    color: var(--dark-theme-color-secundary);
+}
+#wallpapers, #fontes {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px 20px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    background: var(--dark-theme-background);
+    display: none;
+}
+#wallpapers i, #fontes i {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark-theme-color-primary);
+    cursor: pointer;
+}
+#wallpapers h3, #wallpapers p, #fontes h3, #fontes p {
+    width: 100%;
+    padding-bottom: 10px;
+    color: var(--dark-theme-color-primary);
+}
+#wallpapers p, #fontes p {
+    border-bottom: 1px solid #555555;
+    margin-bottom: 10px;
+}
+.wallpapers-opcoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: baseline;
+    justify-content: space-between;
+}
+#wallpapers img {
+    width: 30%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #939393;
+    cursor: pointer;
+    transition: .2s all
+}
+#wallpapers img:hover {
+    transform: scale(1.05);
+    transition: .2s all
+}
+
+.wallpapers-aplicado, .fontes-aplicado {
+    width: 230px;
+    padding: 10px 10px 0 10px;
+    border-radius: 10px;
+    background: #000000b3;
+    border: 1px solid #939393;
+    position: absolute;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
+.wallpapers-aplicado p, .fontes-aplicado p {
+    border: 0 !important;
+    padding: 0 !important;
+    color: #939393 !important;
+    font-size: 12px;
+}
+.fontes-opcoes nav {
+    border: none;
 }
