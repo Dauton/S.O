@@ -157,7 +157,7 @@
                             </div>
 
                         </div>
-                        
+
                         <div class="range-brilho">
                             <input type="range">
                         </div>
@@ -190,6 +190,8 @@
     <script src="jquery.js"></script>
 
     <script>
+
+        /* Botão liga/desliga tela */
         $("#ligar-desligar-tela, #celular-btn-tela").click(function () {
             var mao = $("#ligar-desligar-tela");
             mao.animate({ "right": "-60px" }, 100);
@@ -203,7 +205,7 @@
         $("#ligar-desligar-tela, #celular-btn-tela").click(function () {
             if (!mao) {
                 $("#ligar-desligar-tela").css({ "color": "#800000" });
-                $(".tela-inicial").css({"display": "flex"});
+                $(".tela-inicial").css({ "display": "flex" });
                 mao = true;
             } else {
                 $("#ligar-desligar-tela").removeAttr('style');
@@ -212,20 +214,27 @@
             }
         });
 
+
+        /* Barra superior dropdown */
         var drop = false;
-        $(".barra-superior").click(function() {
-            if(!drop) {
-                $(".barra-drop-down").slideToggle(200, 'swing');
+        $(".barra-superior").click(function () {
+            if (!drop) {
+                $(".barra-drop-down").slideToggle(300, 'swing');
                 drop = true
             } else {
-                $(".barra-drop-down").slideToggle(100, 'swing');
+                $(".barra-drop-down").slideToggle(300, 'swing');
                 drop = false
             }
         });
+        $(".fa-angle-left").click(function () {
+            $(".barra-drop-down").slideUp(200)
+        });
 
+
+        /* Funções da barra superior dropdown */
         var wifi = false;
-        $(".icon:nth-child(1) i").click(function() {
-            if(!wifi) {
+        $(".icon:nth-child(1) i").click(function () {
+            if (!wifi) {
                 $(this).css({
                     "background": "#353535",
                     "transform": "rotate(360deg)",
@@ -234,14 +243,14 @@
                 $(".barra-superior .fa-wifi").fadeOut(0)
                 wifi = true;
             } else {
-                $(this).removeAttr('style').css({"transform": "rotate(-360deg)", "transition": ".2s ease"});
+                $(this).removeAttr('style').css({ "transform": "rotate(-360deg)", "transition": ".2s ease" });
                 $(".barra-superior .fa-wifi").fadeIn(0);
                 wifi = false;
             }
         });
         var bluetooth = false;
-        $(".icon:nth-child(2) i").click(function() {
-            if(!bluetooth) {
+        $(".icon:nth-child(2) i").click(function () {
+            if (!bluetooth) {
                 $(this).css({
                     "background": "#353535",
                     "transform": "rotate(360deg)",
@@ -250,11 +259,12 @@
                 $(".barra-superior .fa-bluetooth-b").fadeOut(0)
                 bluetooth = true;
             } else {
-                $(this).removeAttr('style').css({"transform": "rotate(-360deg)", "transition": ".2s ease"});
+                $(this).removeAttr('style').css({ "transform": "rotate(-360deg)", "transition": ".2s ease" });
                 $(".barra-superior .fa-bluetooth-b").fadeIn(0);
                 bluetooth = false;
             }
         });
+
     </script>
 
 </body>
