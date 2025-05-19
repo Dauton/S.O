@@ -155,7 +155,7 @@
         $("#wallpapers").fadeOut(200);
     });
     $(".fa-circle").click(function() {
-        $(".tela-configuracao, #wallpapers, #fontes").fadeOut(200)
+        $(".tela-configuracao, .tela-calculadora, #wallpapers, #fontes").fadeOut(200)
     });
 
     /* Fontes */
@@ -193,4 +193,40 @@
             $(".fontes-aplicado").fadeOut(200)
         },3000)
     });
+    
+
+
+        /* Tela da calculadora */
+
+    $("#app-calculadora").click(function() {
+        $(".tela-calculadora").show(200).css({"display": "flex"});
+    });
+    $(".fa-gear").click(function() {
+        $(".barra-drop-down").slideUp(200)
+    });
+
+    function insert(num) {
+        var numero = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = numero + num;
+    }
+    
+    function clean() {
+        document.getElementById('resultado').innerHTML = "";
+    }
+    
+    function back() {
+        var resultado = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+    }
+    
+    function calcular()
+    {
+        var resultado = document.getElementById('resultado').innerHTML;
+        if(resultado) {
+            document.getElementById('resultado').innerHTML = eval(resultado);
+        } else {
+            document.getElementById('resultado').innerHTML = "";
+        }
+    }
+    
     

@@ -27,6 +27,14 @@
 
                     </div>
 
+                    <div class="app" id="app-configuracao">
+                        <img src="img/tools_settings_options_configuration_setting_icon_228395.png">
+                        <p>Configurações</p>
+                    </div>
+                    <div class="app" id="app-calculadora">
+                        <img src="img/calculator_icon-icons.com_72046.png">
+                        <p>Calculadora</p>
+                    </div>
                     <div class="app">
                         <img src="img/firefox_icon_130939.png">
                         <p>Navegador</p>
@@ -50,10 +58,6 @@
                     <div class="app">
                         <img src="img/google_maps_icon_130921.png">
                         <p>Maps</p>
-                    </div>
-                    <div class="app">
-                        <img src="img/calculator_icon-icons.com_72046.png">
-                        <p>Calculadora</p>
                     </div>
                     <div class="app">
                         <img src="img/github_icon_130931.png">
@@ -122,10 +126,6 @@
                     <div class="app">
                         <img src="img/uber_icon_130805.png">
                         <p>Uber</p>
-                    </div>
-                    <div class="app" id="app-configuracao">
-                        <img src="img/tools_settings_options_configuration_setting_icon_228395.png">
-                        <p>Configurações</p>
                     </div>
 
                     <div class="barra-drop-down">
@@ -200,43 +200,118 @@
                         <h3>Configurações</h3>
                         <nav>
                             <ul>
-                                <li id="app-configuracao-wallpaper"><i class="fa-solid fa-panorama"></i> Wallpaper <i class="fa-solid fa-chevron-right"></i></li>
-                                <li id="app-configuracao-fontes"><i class="fa-solid fa-font"></i></i> Fontes <i class="fa-solid fa-chevron-right"></i></li>
+                                <li id="app-configuracao-wallpaper"><i class="fa-solid fa-panorama"></i> Wallpaper <i
+                                        class="fa-solid fa-chevron-right"></i></li>
+                                <li id="app-configuracao-fontes"><i class="fa-solid fa-font"></i></i> Fontes <i
+                                        class="fa-solid fa-chevron-right"></i></li>
                             </ul>
                         </nav>
+                        <div id="wallpapers">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                            <h3>Wallpapers</h3>
+                            <p>Escolha</p>
+                            <div class="wallpapers-opcoes">
+                                <img src="img/wallpaper1.jpg" id="wallpaper1">
+                                <img src="img/wallpaper2.jpg" id="wallpaper2">
+                                <img src="img/wallpaper3.jpg" id="wallpaper3">
+                                <img src="img/wallpaper4.jpg" id="wallpaper4">
+                            </div>
+                            <div class="wallpapers-aplicado">
+                                <p>Wallpaper aplicado na tela inicial!</p>
+                            </div>
+                        </div>
+                        <div id="fontes">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                            <h3>Fontes</h3>
+                            <p>Escolha</p>
+                            <div class="fontes-opcoes">
+                                <nav>
+                                    <ul>
+                                        <li id="fonte1"><i class="fa-solid fa-font"></i>Arial</i></li>
+                                        <li id="fonte2"><i class="fa-solid fa-font"></i>Calibri</li>
+                                        <li id="fonte3"><i class="fa-solid fa-font"></i>Open Sans</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="fontes-aplicado">
+                                <p>Fonte alterada no sistema!</p>
+                            </div>
+                        </div>
                     </article>
-                    <div id="wallpapers">
-                        <i class="fa-solid fa-arrow-left-long"></i>
-                        <h3>Wallpapers</h3>
-                        <p>Escolha</p>
-                        <div class="wallpapers-opcoes">
-                            <img src="img/wallpaper1.jpg" id="wallpaper1">
-                            <img src="img/wallpaper2.jpg" id="wallpaper2">
-                            <img src="img/wallpaper3.jpg" id="wallpaper3">
-                            <img src="img/wallpaper4.jpg" id="wallpaper4">
-                        </div>
-                        <div class="wallpapers-aplicado">
-                            <p>Wallpaper aplicado na tela inicial!</p>
-                        </div>
-                    </div>
+
+                    <article class="tela-calculadora">
+                        <h3>Calculadora</h3>
+
+                        <header class="display">
+                            <p id="resultado"></p>
+                        </header>
+            
+                        <section class="top-buttons">
+                            <div id="apagar" onclick="back()">
+                                <p>←</p>
+                            </div>
+                            <div id="limpar" onclick="clean()">
+                                <p>CE</p>
+                            </div>
+                        </section>
+                        <section class="left-buttons">
+                            <div onclick="insert('7')">
+                                <p>7</p>
+                            </div>
+                            <div onclick="insert('8')">
+                                <p>8</p>
+                            </div>
+                            <div onclick="insert('9')">
+                                <p>9</p>
+                            </div>
+                            <div onclick="insert('4')">
+                                <p>4</p>
+                            </div>
+                            <div onclick="insert('5')">
+                                <p>5</p>
+                            </div>
+                            <div onclick="insert('6')">
+                                <p>6</p>
+                            </div>
+                            <div onclick="insert('1')">
+                                <p>1</p>
+                            </div>
+                            <div onclick="insert('2')">
+                                <p>2</p>
+                            </div>
+                            <div onclick="insert('3')">
+                                <p>3</p>
+                            </div>
+                            <div onclick="insert('0')">
+                                <p>0</p>
+                            </div>
+                            <div onclick="insert('00')">
+                                <p>00</p>
+                            </div>
+                            <div onclick="insert('.')">
+                                <p>.</p>
+                            </div>
+                        </section>
+                        <section class="right-buttons">
+                            <div onclick="insert('/')">
+                                <p>÷</p>
+                            </div>
+                            <div onclick="insert('*')">
+                                <p>x</p>
+                            </div>
+                            <div id="menos" onclick="insert('-')">
+                                <p>-</p>
+                            </div>
+                            <div id="mais" onclick="insert('+')">
+                                <p>+</p>
+                            </div>
+                            <div id="igual" onclick="calcular()">
+                                <p>=</p>
+                            </div>
+                        </section>
+                    </article>
                 </article>
-                <div id="fontes">
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                    <h3>Fontes</h3>
-                    <p>Escolha</p>
-                    <div class="fontes-opcoes">
-                        <nav>
-                            <ul>
-                                <li id="fonte1"><i class="fa-solid fa-font"></i>Arial</i></li>
-                                <li id="fonte2"><i class="fa-solid fa-font"></i>Calibri</li>
-                                <li id="fonte3"><i class="fa-solid fa-font"></i>Open Sans</li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="fontes-aplicado">
-                        <p>Fonte alterada no sistema!</p>
-                    </div>
-                </div>
+
 
                 </article>
                 <div class="celular-camera-frontal"></div>
